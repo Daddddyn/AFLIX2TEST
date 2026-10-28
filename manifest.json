@@ -1,0 +1,23 @@
+{
+  "name": "AFLIX",
+  "short_name": "AFLIX",
+  "description": "Stream Movies & TV Shows",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#141414",
+  "theme_color": "#b20710",
+  "icons": [
+    {
+      "src": "assets/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "orientation": "portrait",
+  "prefer_related_applications": false
+}
