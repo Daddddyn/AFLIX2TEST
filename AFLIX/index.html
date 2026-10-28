@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="AFLIX - Stream Movies & TV Shows">
+    <meta name="theme-color" content="#b20710">
+    <title>AFLIX</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="assets/logo.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header with navigation -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">AFLIX</div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-link active" data-tab="home">Home</a>
+                <a href="#" class="nav-link" data-tab="movies">Movies</a>
+                <a href="#" class="nav-link" data-tab="tv">TV Shows</a>
+                <a href="#" class="nav-link" data-tab="search">Search</a>
+            </nav>
+            <div class="user-actions">
+                <button class="btn-search" id="searchBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.5 14H14.71L14.43 13.73C15.41 12.59 16 11.11 16 9.5C16 5.91 13.09 3 9.5 3C5.91 3 3 5.91 3 9.5C3 13.09 5.91 16 9.5 16C11.11 16 12.59 15.41 13.73 14.43L14 14.71V15.5L19 20.45L20.45 19L15.5 14ZM9.5 14C7.01 14 5 11.99 5 9.5C5 7.01 7.01 5 9.5 5C11.99 5 14 7.01 14 9.5C14 11.99 11.99 14 9.5 14Z" fill="white"/>
+                    </svg>
+                </button>
+                <div class="user-profile">
+                    <img src="assets/user-avatar.png" alt="User Profile" class="profile-img">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Recently Watched Section -->
+    <section class="recently-watched-section" id="recentlyWatchedSection">
+        <h2>Recently Watched</h2>
+        <div class="recently-watched-container" id="recentlyWatchedContainer">
+            <!-- Recently watched items will be populated here -->
+        </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Home Tab -->
+        <section class="tab-content active" id="homeTab">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h1 class="hero-title">Welcome to AFLIX</h1>
+                    <p class="hero-description">Stream the latest movies and TV shows in high quality with our premium service.</p>
+                    <button class="btn-primary">Explore Now</button>
+                </div>
+            </div>
+
+            <!-- Featured Content -->
+            <section class="featured-content">
+                <h2>Featured Movies</h2>
+                <div class="content-row" id="featuredMoviesRow">
+                    <!-- Featured movies will be populated here -->
+                </div>
+            </section>
+
+            <!-- Popular Movies -->
+            <section class="popular-content">
+                <h2>Popular Movies</h2>
+                <div class="content-row" id="popularMoviesRow">
+                    <!-- Popular movies will be populated here -->
+                </div>
+            </section>
+
+            <!-- Popular TV Shows -->
+            <section class="popular-content">
+                <h2>Popular TV Shows</h2>
+                <div class="content-row" id="popularTVRow">
+                    <!-- Popular TV shows will be populated here -->
+                </div>
+            </section>
+        </section>
+
+        <!-- Movies Tab -->
+        <section class="tab-content" id="moviesTab">
+            <div class="category-header">
+                <h2>Movies</h2>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="action">Action</button>
+                    <button class="filter-btn" data-filter="comedy">Comedy</button>
+                    <button class="filter-btn" data-filter="drama">Drama</button>
+                </div>
+            </div>
+            <div class="content-row" id="moviesContentRow">
+                <!-- Movies will be populated here -->
+            </div>
+        </section>
+
+        <!-- TV Shows Tab -->
+        <section class="tab-content" id="tvTab">
+            <div class="category-header">
+                <h2>TV Shows</h2>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="drama">Drama</button>
+                    <button class="filter-btn" data-filter="comedy">Comedy</button>
+                    <button class="filter-btn" data-filter="sci-fi">Sci-Fi</button>
+                </div>
+            </div>
+            <div class="content-row" id="tvContentRow">
+                <!-- TV shows will be populated here -->
+            </div>
+        </section>
+
+        <!-- Search Tab -->
+        <section class="tab-content" id="searchTab">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search for movies or TV shows...">
+                <button class="btn-search" id="searchSubmitBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.5 14H14.71L14.43 13.73C15.41 12.59 16 11.11 16 9.5C16 5.91 13.09 3 9.5 3C5.91 3 3 5.91 3 9.5C3 13.09 5.91 16 9.5 16C11.11 16 12.59 15.41 13.73 14.43L14 14.71V15.5L19 20.45L20.45 19L15.5 14ZM9.5 14C7.01 14 5 11.99 5 9.5C5 7.01 7.01 5 9.5 5C11.99 5 14 7.01 14 9.5C14 11.99 11.99 14 9.5 14Z" fill="white"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="search-results" id="searchResults">
+                <!-- Search results will be populated here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Player Modal -->
+    <div class="player-modal" id="playerModal">
+        <div class="player-modal-content">
+            <div class="player-header">
+                <h3 id="playerTitle">Movie Title</h3>
+                <button class="close-btn" id="closePlayer">&times;</button>
+            </div>
+            <div class="player-container">
+                <video id="playerVideo" controls>
+                    Your browser does not support the video tag.
+                </video>
+                <div class="server-selection">
+                    <h4>Select Server:</h4>
+                    <div class="servers-container" id="serversContainer">
+                        <!-- Servers will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div class="loading-spinner" id="loadingSpinner">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
